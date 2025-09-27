@@ -1,0 +1,49 @@
+/* glass.css */
+.combo-box {
+    -fx-background-color: rgba(255,255,255,0.25);
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 12;
+    -fx-padding: 6 10 6 10;
+
+    -fx-border-color: rgba(255,255,255,0.45);
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+
+    /* brillo/sombra para efecto cristal */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 16, 0.2, 0, 6),
+                innershadow(three-pass-box, rgba(255,255,255,0.6), 3, 0.2, 0, 1);
+    -fx-text-fill: white;
+}
+
+.combo-box:hover {
+    -fx-background-color: rgba(255,255,255,0.30);
+    -fx-border-color: rgba(255,255,255,0.55);
+}
+
+.combo-box:focused {
+    -fx-border-color: rgba(255,255,255,0.75);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.35), 18, 0.25, 0, 8);
+}
+
+.combo-box .arrow-button { -fx-background-color: transparent; }
+.combo-box .arrow { -fx-background-color: white; }
+
+/* Popup del ComboBox */
+.combo-box-popup .list-view {
+    -fx-background-color: rgba(255,255,255,0.18);
+    -fx-background-radius: 14;
+    -fx-background-insets: 0;
+    -fx-border-color: rgba(255,255,255,0.35);
+    -fx-border-radius: 14;
+    -fx-padding: 4;
+    -fx-control-inner-background: transparent;
+}
+
+.combo-box-popup .list-cell {
+    -fx-text-fill: black;
+    -fx-background-color: transparent;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: rgba(255,255,255,0.25);
+}
