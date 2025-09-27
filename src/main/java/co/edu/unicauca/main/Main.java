@@ -20,7 +20,7 @@ import co.edu.unicauca.database.InitDB;
  *
  * @author J.Fernando
  * @author Fabian Dorado
- * @author Karzo
+ * @author Karzo (David Santiago Arias Narvaez)
  */
 
 public class Main extends Application {
@@ -51,7 +51,7 @@ public class Main extends Application {
 
         
         loader = new FXMLLoader(Main.class.getResource("/fxml/UserLogin.fxml"));
-        Parent loginRoot = loader.load();              
+        loginRoot = loader.load();              
         UserLoginController uc = loader.getController();
         uc.setPersonaService(personaService);
 
