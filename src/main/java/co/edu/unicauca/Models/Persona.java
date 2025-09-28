@@ -1,14 +1,7 @@
 package co.edu.unicauca.Models;
+import co.edu.unicauca.Util.ConstantesValidacion;
 
-
-/**
- *
- * @author J.Fernando
- * @author Fabian Dorado
- * @author Karzo
- */
-public class Persona
-{
+public class Persona {
     private int id;
     private String nombre;
     private String apellido;
@@ -21,11 +14,11 @@ public class Persona
     }
 
     public Persona(String nombre, String apellido, String celular, String correoElectronico, String contrasenia) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.celular = celular;
-        this.correoElectronico = correoElectronico;
-        this.contrasenia = contrasenia;
+        setNombre(nombre);
+        setApellido(apellido);
+        setCelular(celular);
+        setCorreoElectronico(correoElectronico);
+        setContrasenia(contrasenia);
     }
 
     public int getId() {
@@ -41,7 +34,21 @@ public class Persona
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if (nombre == null || nombre.trim().isEmpty()) {
+            throw new IllegalArgumentException(ConstantesValidacion.MSG_NOMBRE_OBLIGATORIO);
+        }
+        
+        String nombreTrim = nombre.trim();
+        if (nombreTrim.length() < ConstantesValidacion.MIN_LONGITUD_NOMBRE || 
+            nombreTrim.length() > ConstantesValidacion.MAX_LONGITUD_NOMBRE) {
+            throw new IllegalArgumentException(ConstantesValidacion.MSG_NOMBRE_LONGITUD);
+        }
+        
+        if (!nombreTrim.matches(ConstantesValidacion.PATRON_SOLO_LETRAS)) {
+            throw new IllegalArgumentException(ConstantesValidacion.MSG_NOMBRE_SOLO_LETRAS);
+        }
+        
+        this.nombre = nombreTrim;
     }
 
     public String getApellido() {
@@ -49,7 +56,21 @@ public class Persona
     }
 
     public void setApellido(String apellido) {
-        this.apellido = apellido;
+        if (apellido == null || apellido.trim().isEmpty()) {
+            throw new IllegalArgumentException("El apellido es obligatorio");
+        }
+        
+        String apellidoTrim = apellido.trim();
+        if (apellidoTrim.length() < ConstantesValidacion.MIN_LONGITUD_NOMBRE || 
+            apellidoTrim.length() > ConstantesValidacion.MAX_LONGITUD_NOMBRE) {
+            throw new IllegalArgumentException("El apellido " + ConstantesValidacion.MSG_NOMBRE_LONGITUD.toLowerCase());
+        }
+        
+        if (!apellidoTrim.matches(ConstantesValidacion.PATRON_SOLO_LETRAS)) {
+            throw new IllegalArgumentException("El apellido solo puede contener letras y espacios");
+        }
+        
+        this.apellido = apellidoTrim;
     }
 
     public String getCelular() {
@@ -57,7 +78,16 @@ public class Persona
     }
 
     public void setCelular(String celular) {
-        this.celular = celular;
+        if (celular == null || celular.trim().isEmpty()) {
+            throw new IllegalArgumentException(ConstantesValidacion.MSG_CELULAR_OBLIGATORIO);
+        }
+        
+        String celularTrim = celular.trim();
+        if (!celularTrim.matches(ConstantesValidacion.PATRON_CELULAR)) {
+            throw new IllegalArgumentException(ConstantesValidacion.MSG_CELULAR_INVALIDO);
+        }
+        
+        this.celular = celularTrim;
     }
 
     public String getCorreoElectronico() {
@@ -65,7 +95,16 @@ public class Persona
     }
 
     public void setCorreoElectronico(String correoElectronico) {
-        this.correoElectronico = correoElectronico;
+        if (correoElectronico == null || correoElectronico.trim().isEmpty()) {
+            throw new IllegalArgumentException(ConstantesValidacion.MSG_CORREO_OBLIGATORIO);
+        }
+        
+        String correoTrim = correoElectronico.trim();
+        if (!correoTrim.matches(ConstantesValidacion.PATRON_CORREO)) {
+            throw new IllegalArgumentException(ConstantesValidacion.MSG_CORREO_INVALIDO);
+        }
+        
+        this.correoElectronico = correoTrim;
     }
 
     public String getContrasenia() {
@@ -73,15 +112,17 @@ public class Persona
     }
 
     public void setContrasenia(String contrasenia) {
+        if (contrasenia == null || contrasenia.trim().isEmpty()) {
+            throw new IllegalArgumentException(ConstantesValidacion.MSG_CONTRASENIA_OBLIGATORIA);
+        }
         this.contrasenia = contrasenia;
     }
 
-    public boolean isIsLogged() {
+    public boolean getIsLogged() {
         return isLogged;
     }
 
     public void setIsLogged(boolean isLogged) {
         this.isLogged = isLogged;
     }
-    
 }

@@ -3,8 +3,10 @@ package co.edu.unicauca.Vista;
 
 
 import co.edu.unicauca.Factorys.RepositoryFactory;
+import co.edu.unicauca.Models.Coordinador;
 import co.edu.unicauca.Models.Estudiante;
 import co.edu.unicauca.Models.FormatoA;
+import co.edu.unicauca.Models.Persona;
 import co.edu.unicauca.Models.Profesor;
 import co.edu.unicauca.Observer.Observer;
 import co.edu.unicauca.Repository.ProyectoRepository;
@@ -25,6 +27,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import java.util.List;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -41,6 +44,8 @@ import javafx.stage.FileChooser;
  * @author Karzo
  */
 public class ProfesorSubirFormatoA implements Observer{
+    @FXML
+    Label lblUsuario;
     @FXML
     Button botonSubirArchivo;
     @FXML
@@ -143,14 +148,45 @@ public class ProfesorSubirFormatoA implements Observer{
         }
     }
     @Override
-    public void update(Object o) {
+public void update(Object o) {
+    System.out.println("? ProfesorSubirFormatoA.update() llamado con: " + (o != null ? o.getClass().getSimpleName() : "null"));
+    
+    if (o instanceof Persona) {
+        // Es una Persona (Estudiante, Profesor, Coordinador)
+        Persona persona = (Persona) o;
+        System.out.println("? Persona logueada: " + persona.getNombre() + " " + persona.getApellido());
         
-        PersonaService personaService = (PersonaService) o;
-            if(personaService.getPersona() instanceof Profesor){
-            profesor = (Profesor) personaService.getPersona();
-        }
+        // Actualizar la UI según el tipo de persona
+        actualizarUI(persona);
         
+    } else if (o instanceof PersonaService) {
+        // Es el servicio de persona (para otros casos)
+        PersonaService service = (PersonaService) o;
+        System.out.println("? PersonaService recibido");
+        
+    } else {
+        System.out.println("? Tipo de objeto no reconocido: " + (o != null ? o.getClass().getName() : "null"));
     }
+}
+
+private void actualizarUI(Persona persona) {
+    // Actualizar la interfaz según el tipo de persona
+    if (persona instanceof Estudiante) {
+        System.out.println("? Es un Estudiante");
+        // Lógica para estudiante
+    } else if (persona instanceof Profesor) {
+        System.out.println("? Es un Profesor");
+        // Lógica para profesor
+    } else if (persona instanceof Coordinador) {
+        System.out.println("? Es un Coordinador");
+        // Lógica para coordinador
+    }
+    
+    // Actualizar elementos de la UI
+    if (lblUsuario != null) {
+        lblUsuario.setText(persona.getNombre() + " " + persona.getApellido());
+    }
+}
 
     
 } 

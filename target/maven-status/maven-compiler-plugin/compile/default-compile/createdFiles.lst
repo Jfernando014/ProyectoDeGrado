@@ -15,6 +15,7 @@ co\edu\unicauca\Vista\UserRegisterController$3.class
 co\edu\unicauca\Repository\ProyectoRepository.class
 co\edu\unicauca\Models\Facultad.class
 co\edu\unicauca\Repository\PersonaRepository.class
+co\edu\unicauca\Util\ConstantesValidacion.class
 co\edu\unicauca\Models\Estudiante.class
 co\edu\unicauca\Vista\UserRegisterController$2.class
 co\edu\unicauca\Factorys\RepositoryFactory.class
