@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: radial-gradient(center 50% 50%,radius 200%, #001282,black);" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unicauca.Vista.ProfesorSubirFormatoA">
+   <children>
+      <Pane layoutX="428.0" layoutY="142.0" prefHeight="1080.0" prefWidth="150.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="930.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="10.0" layoutY="-13.0">
+               <image>
+                  <Image url="@../imagenes/logoUnicaucaVertical.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="1402.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: CENTER;" text="Portal Docente">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1770.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/perfil.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="PanelSubirFormatoA" layoutX="211.0" layoutY="163.0" prefHeight="650.0" prefWidth="1650.0" style="-fx-background-color: white; visibility: true;" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="225.0">
+         <children>
+            <Pane layoutX="1285.0" layoutY="153.0" prefHeight="400.0" prefWidth="350.0" style="-fx-border-color: black; -fx-border-radius: 30;">
+               <children>
+                  <ImageView fx:id="imagenArchivoPlano" fitHeight="200.0" fitWidth="200.0" layoutX="-50.0" layoutY="-125.0" x="125.0" y="175.0">
+                     <image>
+                        <Image url="@../imagenes/enviar.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="textNombreArchivo" layoutX="30.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agrega un archivo PDF de maximo 20MB">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Text>
+                  <Button fx:id="botonSubirArchivo" layoutX="100.0" layoutY="325.0" mnemonicParsing="false" onAction="#subirDocumento" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #1B21D4;" text="Agregar Archivo" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Button>
+                  <ImageView fx:id="imagenPdf" fitHeight="200.0" fitWidth="200.0" style="visibility: false;" x="125.0" y="175.0">
+                     <image>
+                        <Image url="@../imagenes/expediente.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Button fx:id="botonEnviarFormato" layoutX="1367.0" layoutY="605.0" mnemonicParsing="false" onAction="#enviarFormato" prefHeight="84.0" prefWidth="187.0" text="Subir Formato A">
+               <font>
+                  <Font size="20.0" />
+               </font></Button>
+            <TextField fx:id="textFieldEstudiante" layoutX="643.0" layoutY="180.0" prefHeight="40.0" prefWidth="400.0" promptText="ESTUDIANTE*" style="-fx-border-color: gray; -fx-alignment: center;" />
+            <Text layoutX="796.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: CENTER;" text="Estudiante">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="790.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: CENTER;" text="Estudiante *">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <TextField fx:id="textFieldTituloProyecto" layoutX="104.0" layoutY="182.0" prefHeight="40.0" prefWidth="400.0" promptText="TITULO DE PROYECTO" style="-fx-border-color: gray; -fx-alignment: center;" />
+            <TextField fx:id="textFieldCoodirector" layoutX="104.0" layoutY="402.0" prefHeight="40.0" prefWidth="400.0" promptText="CODIRECTOR DE PROYECTO" style="-fx-border-color: gray; -fx-alignment: center;" />
+            <Text layoutX="211.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: CENTER;" text="Objetivo general">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="154.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: CENTER;" text="Titulo de proyecto de grado *">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="788.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: CENTER;" text="Modalidad *">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="195.0" layoutY="578.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: CENTER;" text="Objetivos especificos">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="183.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: CENTER;" text="Director del proyecto *">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="comboBoxModalidad" layoutX="643.0" layoutY="505.0" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: white; -fx-border-color: gray;" />
+            <TextField fx:id="textFieldObjetivoGeneral" layoutX="104.0" layoutY="505.0" prefHeight="40.0" prefWidth="400.0" promptText="OBJETIVO GENERAL" style="-fx-border-color: gray; -fx-alignment: center;" />
+            <Text layoutX="173.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: CENTER;" text="Codirector del proyecto *">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <TextArea fx:id="textAreaObjetivosEspecificos" layoutX="104.0" layoutY="586.0" prefHeight="170.0" prefWidth="400.0" style="-fx-border-color: gray; -fx-alignment: center;" />
+            <TextField fx:id="textFieldCoodirector1" layoutX="104.0" layoutY="290.0" prefHeight="40.0" prefWidth="400.0" promptText="DIRECTOR DE PROYECTO" style="-fx-border-color: gray; -fx-alignment: center;" />
+            <Line endX="-100.0" endY="610.0" layoutX="683.0" layoutY="191.0" startX="-100.0" startY="-45.0" />
+            <Text layoutX="745.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: CENTER;" text="FORMATO A">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <TextField fx:id="textFieldEstudiante1" layoutX="642.0" layoutY="290.0" prefHeight="40.0" prefWidth="400.0" promptText="ESTUDIANTE" style="-fx-border-color: gray; -fx-alignment: center;" />
+            <Text layoutX="796.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: CENTER;" text="Fceha actual">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <TextField fx:id="textFieldEstudiante11" layoutX="643.0" layoutY="402.0" prefHeight="40.0" prefWidth="400.0" promptText="ESTUDIANTE" style="-fx-border-color: gray; -fx-alignment: center;" text="SYSDATE" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="4.0" layoutY="14.0"
+                    pickOnBounds="true" preserveRatio="true"
+                    onMouseClicked="#VolverAlMenu">
+             <image>
+                 <Image url="@../imagenes/izquierda.png" />
+             </image>
+         </ImageView>
+
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

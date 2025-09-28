@@ -58,8 +58,6 @@ public class ProfesorSubirFormatoA implements Observer {
     @FXML
     Button botonSubirArchivo;
 
-    private Button botonSubirArchivo;
-
     @FXML
     private Pane PanelSubirFormatoA, PaneSeleccionarModalidad;
     @FXML
@@ -214,15 +212,5 @@ private void actualizarUI(Persona persona) {
     if (lblUsuario != null) {
         lblUsuario.setText(persona.getNombre() + " " + persona.getApellido());
     }
-}
-
-    
-} 
-
-    public void update(Object o) {
-        PersonaService personaService = (PersonaService) o;
-        if (personaService.getPersona() instanceof Profesor) {
-            profesor = (Profesor) personaService.getPersona();
-        }
-    }
+    }   
 }
