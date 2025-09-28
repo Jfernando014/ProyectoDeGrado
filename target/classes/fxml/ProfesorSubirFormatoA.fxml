@@ -26,6 +26,11 @@
                   <Font size="50.0" />
                </font>
             </Text>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1770.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/perfil.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <Pane fx:id="PanelSubirFormatoA" layoutX="211.0" layoutY="163.0" prefHeight="650.0" prefWidth="1650.0" style="-fx-background-color: white; visibility: true;" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="225.0">
@@ -116,6 +121,16 @@
                </font>
             </Text>
             <TextField fx:id="textFieldEstudiante11" layoutX="643.0" layoutY="402.0" prefHeight="40.0" prefWidth="400.0" promptText="ESTUDIANTE" style="-fx-border-color: gray; -fx-alignment: center;" text="SYSDATE" />
+        <ImageView fx:id="ToProfesorMenu" 
+           onMouseClicked="#VolverAlMenu"
+           fitHeight="100.0" fitWidth="100.0" 
+           layoutX="4.0" layoutY="14.0" 
+           pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../imagenes/izquierda.png" />
+            </image>
+         </ImageView>
+
          </children>
       </Pane>
    </children>

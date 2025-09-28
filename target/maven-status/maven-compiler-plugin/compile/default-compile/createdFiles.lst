@@ -22,6 +22,7 @@ co\edu\unicauca\Models\Programa.class
 co\edu\unicauca\Repository\Implementation\DepartamentoRepositorySQLite.class
 co\edu\unicauca\Util\Cargo.class
 co\edu\unicauca\Services\ProyectoService.class
+co\edu\unicauca\Vista\ProfesorMenuController.class
 co\edu\unicauca\Repository\Implementation\PersonaRepositorySQLite$1.class
 co\edu\unicauca\Util\Tipo.class
 co\edu\unicauca\Vista\UserRegisterController$1.class
