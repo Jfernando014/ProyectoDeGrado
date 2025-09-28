@@ -121,14 +121,12 @@
                </font>
             </Text>
             <TextField fx:id="textFieldEstudiante11" layoutX="643.0" layoutY="402.0" prefHeight="40.0" prefWidth="400.0" promptText="ESTUDIANTE" style="-fx-border-color: gray; -fx-alignment: center;" text="SYSDATE" />
-        <ImageView fx:id="ToProfesorMenu" 
-           onMouseClicked="#VolverAlMenu"
-           fitHeight="100.0" fitWidth="100.0" 
-           layoutX="4.0" layoutY="14.0" 
-           pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@../imagenes/izquierda.png" />
-            </image>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="4.0" layoutY="14.0"
+                    pickOnBounds="true" preserveRatio="true"
+                    onMouseClicked="#VolverAlMenu">
+             <image>
+                 <Image url="@../imagenes/izquierda.png" />
+             </image>
          </ImageView>
 
          </children>
