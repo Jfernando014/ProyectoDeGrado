@@ -1,41 +1,49 @@
 package co.edu.unicauca.Observer;
 
-/**
- *
- * @author J.Fernando
- * @author Fabian Dorado
- * @author Karzo
- */
-
 import java.util.ArrayList;
+import java.util.List;
 
-public abstract class Subject {
+/**
+ * Clase base para el patrón Observer
+ */
+public class Subject {
+    private List<Observer> observers;
 
-    ArrayList<Observer> observers;
-
-    public void Subject() {
-
+    public Subject() {
+        this.observers = new ArrayList<>();
     }
 
-    /**
-     * Agrega un observador
-     *
-     * @param obs
-     */
-    public void addObserver(Observer obs) {
-        if (observers == null) {
-            observers = new ArrayList<>();
+    public void addObserver(Observer observer) {
+        if (observer != null && !observers.contains(observer)) {
+            observers.add(observer);
         }
-        observers.add(obs);
     }
 
-    /**
-     * Notifica a todos los observadores que hubo un cambio en el modelo
-     */
+    public void removeObserver(Observer observer) {
+        if (observer != null) {
+            observers.remove(observer);
+        }
+    }
+
     public void notifyAllObserves() {
-        for (Observer each : observers) {
-            each.update(this);
+        // Notificar sin parámetro
+        if (observers != null) {
+            for (Observer observer : observers) {
+                observer.update(null);
+            }
         }
     }
 
+    public void notifyAllObserves(Object data) {
+        // Notificar con parámetro
+        if (observers != null) {
+            for (Observer observer : observers) {
+                observer.update(data);
+            }
+        }
+    }
+
+    public List<Observer> getObservers() {
+        return observers;
+    }
 }

@@ -1,0 +1,19 @@
+@startuml
+class co.edu.unicauca.Util.ConstantesValidacion
+class co.edu.unicauca.Util.Encriptador
+class co.edu.unicauca.Util.Validador
+class java.io.File
+class java.util.Base64
+class java.util.regex.Pattern
+class javax.crypto.Cipher
+class javax.crypto.spec.IvParameterSpec
+class javax.crypto.spec.SecretKeySpec
+enum co.edu.unicauca.Util.Cargo
+enum co.edu.unicauca.Util.Tipo
+co.edu.unicauca.Util.Encriptador ..> java.util.Base64
+co.edu.unicauca.Util.Encriptador ..> javax.crypto.Cipher
+co.edu.unicauca.Util.Encriptador ..> javax.crypto.spec.IvParameterSpec
+co.edu.unicauca.Util.Encriptador ..> javax.crypto.spec.SecretKeySpec
+co.edu.unicauca.Util.Validador ..> java.io.File
+co.edu.unicauca.Util.Validador ..> java.util.regex.Pattern
+@enduml

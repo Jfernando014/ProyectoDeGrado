@@ -2,7 +2,6 @@ package co.edu.unicauca.Services;
 
 import co.edu.unicauca.Models.Persona;
 import co.edu.unicauca.Observer.Subject;
-
 import co.edu.unicauca.Repository.PersonaRepository;
 import co.edu.unicauca.Util.Encriptador;
 import co.edu.unicauca.Util.Validador;
@@ -10,82 +9,135 @@ import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 
-/**
- *
- * @author J.Fernando
- * @author Fabian Dorado
- * @author Karzo
- */
-public class PersonaService extends Subject{
+public class PersonaService extends Subject {
     
-    PersonaRepository personaRepository;
-    Persona persona;
+    private PersonaRepository personaRepository;
+    private Persona persona;
+    
     public PersonaService(PersonaRepository personaRepository) {
         this.personaRepository = personaRepository;
-        
     }
     
     public Persona iniciarSesion(String correoElectronico, String contrasenia) throws UnsupportedEncodingException, Exception {
-        System.out.println(correoElectronico);
-        if (!Validador.esCorreoValido("unicauca.edu.co", correoElectronico))
-            return null;
+        // Validar parámetros de entrada
+        if (correoElectronico == null || correoElectronico.trim().isEmpty()) {
+            throw new IllegalArgumentException("El correo electrónico es obligatorio");
+        }
         
-        this.persona =  personaRepository.getOne(correoElectronico);
+        if (contrasenia == null || contrasenia.trim().isEmpty()) {
+            throw new IllegalArgumentException("La contraseña es obligatoria");
+        }
+        
+        String correoTrim = correoElectronico.trim();
+        String contraseniaTrim = contrasenia.trim();
+        
+        System.out.println(correoTrim);
+        
+        // Validar formato de correo unicauca
+        if (!Validador.esCorreoValido("unicauca.edu.co", correoTrim)) {
+            throw new IllegalArgumentException("El correo electrónico debe ser del dominio unicauca.edu.co");
+        }
+        
+        // Buscar persona en el repositorio
+        this.persona = personaRepository.getOne(correoTrim);
         
         if (persona == null) {
-            return null;
+            throw new IllegalArgumentException("No se encontró un usuario con ese correo electrónico");
         }
 
+        // Desencriptar y validar contraseña
         String clave = "1234567890ABCDEF";  
         byte[] iv = "abcdefghijklmnop".getBytes("UTF-8");
 
-        if (Encriptador.decriptar(clave, iv, persona.getContrasenia()).equals(contrasenia)) {
-            
-            persona.setIsLogged(true);
-            
-            this.notifyAllObserves();
-            
-            return persona;
-            
+        String contraseniaDesencriptada = Encriptador.decriptar(persona.getContrasenia());
+        
+        if (contraseniaDesencriptada == null || !contraseniaDesencriptada.equals(contraseniaTrim)) {
+            throw new IllegalArgumentException("Contraseña incorrecta");
         }
         
-        return null;
-    }
-    public List<Persona> buscarPorId(int id)
-    {
+        // Establecer sesión y notificar observadores
+        persona.setIsLogged(true);
+        this.notifyAllObserves(persona);
         
-        return null;
-    
-    }
-    public Persona getPersonaId(int id)
-    {
-    
-        return personaRepository.getOne(id);
-    
-    }
-    
-    public Persona getPersona()
-    {
         return persona;
+    }
     
+    public List<Persona> buscarPorId(int id) {
+        if (id <= 0) {
+            throw new IllegalArgumentException("El ID debe ser un número positivo");
+        }
+        // Implementar búsqueda por ID si es necesario
+        return null;
+    }
+    
+    public Persona getPersonaId(int id) {
+        if (id <= 0) {
+            throw new IllegalArgumentException("El ID debe ser un número positivo");
+        }
+        return personaRepository.getOne(id);
+    }
+    
+    public Persona getPersona() {
+        return persona;
     }
     
     public String registrar(Persona persona) throws UnsupportedEncodingException, Exception {
-        if (!Validador.esCorreoValido("unicauca.edu.co", persona.getCorreoElectronico()))
-            return "Correo invalido";
+        // Validar persona no nula
+        if (persona == null) {
+            throw new IllegalArgumentException("La persona no puede ser nula");
+        }
+        
+        // Validar campos obligatorios usando Validador
+        Validador.validarPersona(
+            persona.getNombre(), 
+            persona.getApellido(), 
+            persona.getCelular(), 
+            persona.getCorreoElectronico(), 
+            persona.getContrasenia()
+        );
+        
+        // Validar formato de correo unicauca
+        if (!Validador.esCorreoValido("unicauca.edu.co", persona.getCorreoElectronico())) {
+            return "Correo invalido: debe ser del dominio unicauca.edu.co";
+        }
 
+        // Validar formato de contraseña
         if (!Validador.esContraseniaCorrecta(persona.getContrasenia())) {
             return "Formato de contrasenia invalido recuerde que debe llevar por lo menos un caracter especial una mayuscula y un digito";
         }
 
-        persona.setContrasenia(Encriptador.encriptar(persona.getContrasenia()));
+        // Verificar si el correo ya existe
+        try {
+            Persona personaExistente = personaRepository.getOne(persona.getCorreoElectronico());
+            if (personaExistente != null) {
+                return "Ya existe un usuario registrado con este correo electrónico";
+            }
+        } catch (Exception e) {
+            // Si hay error al buscar, continuar con el registro
+            System.out.println("Error al verificar correo existente: " + e.getMessage());
+        }
+
+        // Encriptar contraseña antes de guardar
+        String contraseniaEncriptada = Encriptador.encriptar(persona.getContrasenia());
+        persona.setContrasenia(contraseniaEncriptada);
         
-        if(personaRepository.save(persona))
-        {
+        // Guardar en repositorio
+        if (personaRepository.save(persona)) {
             return "Registro completado";
         }
         
-        return "Se encontro un registro con el mismo correo electronico";
+        return "Error al guardar el registro en la base de datos";
     }
     
+    public void cerrarSesion() {
+        if (this.persona != null) {
+            this.persona.setIsLogged(false);
+            this.persona = null;
+            this.notifyAllObserves();
+        }
+    }
+    
+    public boolean validarSesionActiva() {
+        return this.persona != null && this.persona.getIsLogged();
+    }
 }

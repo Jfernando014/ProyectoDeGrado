@@ -36,7 +36,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         System.out.println("🚀 Iniciando aplicación...");
         
-        scene = new Scene(new javafx.scene.Group(), 1920, 1080);
+        scene = new Scene(new javafx.scene.Group(), 1366, 1440);
         stage.setScene(scene);
         stage.show();
 
