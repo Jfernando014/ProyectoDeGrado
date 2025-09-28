@@ -111,8 +111,8 @@ public class UserLoginController {
                 System.out.println("Nombre: " + persona.getNombre());
                 
                 if (persona instanceof Profesor) {
-                    System.out.println("🔵 Navegando a vista Profesor...");
-                    Main.goProfesor();
+                    System.out.println("🔵 Navegando a Mnu Profesor...");
+                    Main.setRoot("ProfesorMenu");
                 } else if (persona instanceof Coordinador) {
                     System.out.println("🔵 Navegando a vista Coordinador...");
                     Main.setRoot("FormatosCoordinador");

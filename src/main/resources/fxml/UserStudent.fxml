@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" spacing="15.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unicauca.Vista.EstudianteController">
+<VBox alignment="TOP_CENTER" prefHeight="1080.0" prefWidth="1920.0" spacing="15.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unicauca.Vista.EstudianteController">
    <children>
       <Label text="Estado de Proyecto de Grado" textFill="#2d5a7a">
          <font>
@@ -18,33 +18,33 @@
          </padding>
       </Label>
       
-      <Label fx:id="labelBienvenida" text="Bienvenido" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+      <Label fx:id="labelBienvenida" alignment="CENTER_RIGHT" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Bienvenido" />
       <Label fx:id="labelPrograma" text="Programa: " />
       
       <Separator prefWidth="500.0" />
       
-      <Label text="INFORMACIÓN DEL PROYECTO" style="-fx-font-weight: bold; -fx-font-size: 18px; -fx-text-fill: #2d5a7a;" />
+      <Label style="-fx-font-weight: bold; -fx-font-size: 18px; -fx-text-fill: #2d5a7a;" text="INFORMACIÓN DEL PROYECTO" />
       
-      <Label fx:id="labelTituloProyecto" text="Título: No asignado" style="-fx-font-size: 14px; -fx-wrap-text: true;" maxWidth="500.0" />
-      <Label fx:id="labelTipoProyecto" text="Tipo: No asignado" style="-fx-font-size: 14px;" />
-      <Label fx:id="labelDirectores" text="Directores: --" style="-fx-font-size: 14px;" />
+      <Label fx:id="labelTituloProyecto" maxWidth="500.0" style="-fx-font-size: 14px; -fx-wrap-text: true;" text="Título: No asignado" />
+      <Label fx:id="labelTipoProyecto" style="-fx-font-size: 14px;" text="Tipo: No asignado" />
+      <Label fx:id="labelDirectores" style="-fx-font-size: 14px;" text="Directores: --" />
       
-      <VBox spacing="10.0" alignment="CENTER" style="-fx-background-color: #f5f5f5; -fx-padding: 15px; -fx-border-radius: 5px; -fx-background-radius: 5px;">
-         <Label text="ESTADO ACTUAL" style="-fx-font-weight: bold; -fx-font-size: 16px;" />
-         <Label fx:id="labelEstadoProyecto" text="Sin proyecto registrado" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #666666;" />
-         <Label fx:id="labelDetalleEstado" text="No se ha subido ningún formato A" style="-fx-font-size: 12px; -fx-text-fill: #888888; -fx-wrap-text: true;" maxWidth="400.0" />
+      <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #f5f5f5; -fx-padding: 15px; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+         <Label style="-fx-font-weight: bold; -fx-font-size: 16px;" text="ESTADO ACTUAL" />
+         <Label fx:id="labelEstadoProyecto" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #666666;" text="Sin proyecto registrado" />
+         <Label fx:id="labelDetalleEstado" maxWidth="400.0" style="-fx-font-size: 12px; -fx-text-fill: #888888; -fx-wrap-text: true;" text="No se ha subido ningún formato A" />
       </VBox>
       
-      <Label fx:id="labelFechaSubida" text="Fecha de subida: --" style="-fx-font-size: 12px; -fx-text-fill: #666666;" />
-      <Label fx:id="labelFechaRevision" text="Fecha de revisión: --" style="-fx-font-size: 12px; -fx-text-fill: #666666;" />
+      <Label fx:id="labelFechaSubida" style="-fx-font-size: 12px; -fx-text-fill: #666666;" text="Fecha de subida: --" />
+      <Label fx:id="labelFechaRevision" style="-fx-font-size: 12px; -fx-text-fill: #666666;" text="Fecha de revisión: --" />
       
       <Separator prefWidth="500.0" />
       
-      <Label fx:id="labelFechaActualizacion" text="Última actualización: --/--/----" style="-fx-font-size: 12px; -fx-text-fill: #666666;" />
+      <Label fx:id="labelFechaActualizacion" style="-fx-font-size: 12px; -fx-text-fill: #666666;" text="Última actualización: --/--/----" />
       
-      <VBox spacing="10.0" alignment="CENTER">
-         <Button fx:id="btnActualizar" text="Actualizar Estado" onAction="#actualizarEstado" prefWidth="200.0" />
-         <Button fx:id="btnCerrarSesion" text="Cerrar Sesión" onAction="#cerrarSesion" style="-fx-background-color: #ff4444; -fx-text-fill: white;" prefWidth="200.0" />
+      <VBox alignment="CENTER" spacing="10.0">
+         <Button fx:id="btnActualizar" onAction="#actualizarEstado" prefWidth="200.0" text="Actualizar Estado" />
+         <Button fx:id="btnCerrarSesion" onAction="#cerrarSesion" prefWidth="200.0" style="-fx-background-color: #ff4444; -fx-text-fill: white;" text="Cerrar Sesión" />
       </VBox>
    </children>
    <padding>

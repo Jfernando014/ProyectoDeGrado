@@ -9,49 +9,52 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="1080" prefWidth="1920.0" style="-fx-background-color: radial-gradient(center 50% 50%,radius 200%, #001282,black);" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unicauca.Vista.UserLoginController">
+<AnchorPane id="AnchorPane" prefHeight="1080" prefWidth="1920.0" style="-fx-background-color: radial-gradient(center 50% 50%,radius 200%, #001282,black);" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unicauca.Vista.UserLoginController">
    <children>
-      <StackPane prefHeight="1080.0" prefWidth="1920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="414.0" layoutY="780.0" prefHeight="150.0" prefWidth="1920.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" opacity="0.8" prefHeight="400.0" prefWidth="400.0" rotate="-3.0" style="-fx-background-color: #FFFFFF; -fx-max-height: 400; -fx-pref-height: 400; -fx-max-width: 400; -fx-pref-width: 400;" />
-            <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" opacity="0.8" prefHeight="400.0" prefWidth="400.0" rotate="3.0" style="-fx-background-color: #FFFFFF; -fx-max-height: 400; -fx-pref-height: 400; -fx-max-width: 400; -fx-pref-width: 400;" />
-            <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF; -fx-max-height: 400; -fx-pref-height: 400; -fx-max-width: 400; -fx-pref-width: 400;">
+            <Pane layoutX="66.0" layoutY="-42.0" prefHeight="143.0" prefWidth="190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
                <children>
-                  <Hyperlink fx:id="linkOlvideMiContrasenia" layoutX="174.0" layoutY="264.0" text="Contraseña" textFill="#9f0e13" />
-                  <Button id="botonRegistrarse" fx:id="botonRegistrarse" layoutX="189.0" layoutY="305.0" mnemonicParsing="false" onAction="#irARegistrarse" prefWidth="97.0" style="-fx-background-color: linear-gradient(from 50% 25% to 100% 100%, #9F0E13, #001282); -fx-background-radius: 10px;" text="REGISTRARSE" textFill="WHITE" />
-                  <Button id="botonLogin" fx:id="botonIngresar" layoutX="115.0" layoutY="305.0" mnemonicParsing="false" onAction="#iniciarSesion" style="-fx-background-color: linear-gradient(from 50% 25% to 100% 100%, #9F0E13, #001282); -fx-background-radius: 10px;" text="INGRESAR" textFill="WHITE" />
-                  <Label layoutX="126.0" layoutY="267.0" text="olvide mi" />
-                  <PasswordField fx:id="passwordFieldContrasenia" layoutX="124.0" layoutY="228.0" promptText="CONTRASEÑA" style="-fx-alignment: center;" />
-                  <TextField fx:id="textFieldCorreoElectronico" layoutX="124.0" layoutY="188.0" promptText="CORREO ELECTRONICO" style="-fx-alignment: center;" />
-                  <Pane layoutX="125.0" layoutY="25.0" prefHeight="150.0" prefWidth="150.0">
-                     <children>
-                        <ImageView fitHeight="150.0" fitWidth="100.0" layoutX="25.0">
-                           <image>
-                              <Image url="@../imagenes/logoUnicaucaVertical.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Text fx:id="textCorreoOContraseniaIncorrecto" layoutX="90.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" wrappingWidth="236.0" />
-               </children>
-            </Pane>
-         </children>
-      </StackPane>
-      <AnchorPane layoutX="414.0" layoutY="780.0" prefHeight="150.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <children>
-            <Pane layoutX="66.0" layoutY="-42.0" prefHeight="150.0" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
-               <children>
-                  <ImageView fitHeight="150.0" fitWidth="100.0" layoutX="22.0" layoutY="7.0">
+                  <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="-10.0" layoutY="-18.0">
                      <image>
                         <Image url="@../imagenes/logoUnicaucaVertical.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
+            <Text layoutX="1396.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inicio de sesion">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
+      <Pane layoutX="660.0" layoutY="240.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <Hyperlink fx:id="linkOlvideMiContrasenia" layoutX="285.0" layoutY="346.0" text="Contraseña" textFill="#9f0e13">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Hyperlink>
+            <Button id="botonRegistrarse" fx:id="botonRegistrarse" layoutX="375.0" layoutY="426.0" mnemonicParsing="false" onAction="#irARegistrarse" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(from 50% 25% to 100% 100%, #9F0E13, #001282); -fx-background-radius: 10px;" text="REGISTRARSE" textFill="#ebe2e2" />
+            <Button id="botonLogin" fx:id="botonIngresar" layoutX="83.0" layoutY="426.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(from 50% 25% to 100% 100%, #9F0E13, #001282); -fx-background-radius: 10px;" text="INGRESAR" textFill="WHITE" />
+            <Label layoutX="214.0" layoutY="350.0" text="olvide mi">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordFieldContrasenia" layoutX="125.0" layoutY="290.0" prefHeight="30.0" prefWidth="350.0" promptText="CONTRASEÑA" style="-fx-alignment: center;" />
+            <TextField fx:id="textFieldCorreoElectronico" layoutX="125.0" layoutY="222.0" prefHeight="30.0" prefWidth="350.0" promptText="CORREO ELECTRONICO" style="-fx-alignment: center;" />
+            <Pane layoutX="125.0" layoutY="25.0" prefHeight="150.0" prefWidth="150.0" />
+            <ImageView fitHeight="170.0" fitWidth="140.0" layoutX="230.0" layoutY="15.0">
+               <image>
+                  <Image url="@../imagenes/logoUnicaucaVertical.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
