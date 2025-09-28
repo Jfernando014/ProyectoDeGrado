@@ -7,8 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: radial-gradient(center 50% 50%,radius 200%, #001282,black);" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="co.edu.unicauca.Vista.ProfesorMenuController">
+<AnchorPane id="AnchorPane" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: radial-gradient(center 50% 50%,radius 200%, #001282,black);" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unicauca.Vista.ProfesorMenuController">
    <children>
       <Pane prefHeight="150.0" prefWidth="1920.0" style="-fx-background-color: white;">
          <children>
@@ -51,11 +50,7 @@
                   <Image url="@../imagenes/portafolio.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="ToFormatoA"
-           fitHeight="150.0" fitWidth="200.0"
-           layoutX="252.0" layoutY="115.0"
-           pickOnBounds="true" preserveRatio="true"
-           onMouseClicked="#irASubirFormatoA">
+            <ImageView fx:id="ToFormatoA" fitHeight="150.0" fitWidth="200.0" layoutX="252.0" layoutY="115.0" onMouseClicked="#irASubirFormatoA" pickOnBounds="true" preserveRatio="true">
    <image>
       <Image url="@../imagenes/boton-agregar.png" />
    </image>
