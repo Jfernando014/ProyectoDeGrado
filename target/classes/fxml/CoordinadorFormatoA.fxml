@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.unicauca.Vista.CoordinadorFormatoAController"
+            prefWidth="1280" prefHeight="720"
+            style="-fx-background-color: radial-gradient(center 50% 50%, radius 200%, #001282, black);">
+
+    <children>
+        <!-- Header -->
+        <Pane prefHeight="90" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0"
+              style="-fx-background-color: white;">
+            <children>
+                <Text layoutX="520" layoutY="55" text="FORMATO A" >
+                    <font><Font size="28"/></font>
+                </Text>
+                <Button text="⟵ Volver" layoutX="20" layoutY="20" onAction="#volver"/>
+            </children>
+        </Pane>
+
+        <!-- Card -->
+        <GridPane hgap="16" vgap="10"
+                  AnchorPane.leftAnchor="40" AnchorPane.rightAnchor="40"
+                  AnchorPane.topAnchor="110" AnchorPane.bottomAnchor="40"
+                  style="-fx-background-color: white; -fx-padding: 24; -fx-background-radius: 16;">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="25"/>
+                <ColumnConstraints percentWidth="35"/>
+                <ColumnConstraints percentWidth="15"/>
+                <ColumnConstraints percentWidth="25"/>
+            </columnConstraints>
+
+            <!-- Columna izquierda -->
+            <children>
+                <Label text="Título de proyecto de grado*" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtTitulo" editable="false" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+
+                <Label text="Director del proyecto*" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtDirector" editable="false" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+
+                <Label text="Codirector del proyecto" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtCodirector" editable="false" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+
+                <Label text="Objetivo general" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtObjetivo" editable="false" GridPane.rowIndex="7" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+
+                <Label text="Objetivo específico" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+                <TextArea fx:id="txtObjetivoEspecifico" editable="false" prefRowCount="6"
+                          GridPane.rowIndex="9" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+
+                <!-- Columna derecha -->
+                <Label text="Estudiantes*" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                <TextArea fx:id="txtEstudiantes" editable="false" prefRowCount="3"
+                          GridPane.rowIndex="1" GridPane.columnIndex="2" GridPane.columnSpan="2"/>
+
+                <Label text="Fecha actual" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+                <TextField fx:id="txtFecha" editable="false" GridPane.rowIndex="3" GridPane.columnIndex="2" GridPane.columnSpan="2"/>
+
+                <Label text="Modalidad*" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+                <TextField fx:id="txtModalidad" editable="false" GridPane.rowIndex="5" GridPane.columnIndex="2" GridPane.columnSpan="2"/>
+
+                <Label text="Archivo PDF" GridPane.rowIndex="6" GridPane.columnIndex="2"/>
+                <HBox spacing="8" GridPane.rowIndex="7" GridPane.columnIndex="2" GridPane.columnSpan="2">
+                    <TextField fx:id="txtArchivo" editable="false" HBox.hgrow="ALWAYS"/>
+                    <Button text="📄 Abrir" onAction="#abrirPDF"/>
+                </HBox>
+
+                <HBox spacing="12" GridPane.rowIndex="9" GridPane.columnIndex="2" GridPane.columnSpan="2" alignment="CENTER_RIGHT">
+                    <Button text="❌ Rechazar" onAction="#rechazar"/>
+                    <Button text="✅ Aceptar"  onAction="#aprobar"/>
+                </HBox>
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.unicauca.Vista.CoordinadorFormatoAController"
+            prefWidth="1920" prefHeight="1080"
+            style="-fx-background-color: radial-gradient(center 50% 50%,radius 200%, #001282,black);">
+
+    <!-- HEADER -->
+    <children>
+        <Pane prefHeight="150" prefWidth="1920" style="-fx-background-color: white;">
+            <children>
+                <ImageView fitHeight="200" fitWidth="200" layoutX="-6" layoutY="-16">
+                    <image><Image url="@../imagenes/logoUnicaucaVertical.png"/></image>
+                </ImageView>
+                <Text layoutX="1520" layoutY="95" text="Portal Coordinador">
+                    <font><Font size="50"/></font>
+                </Text>
+                <ImageView fitHeight="150" fitWidth="200" layoutX="1764" pickOnBounds="true" preserveRatio="true">
+                    <image><Image url="@../imagenes/perfil.png"/></image>
+                </ImageView>
+            </children>
+        </Pane>
+
+        <!-- CARD -->
+        <Pane AnchorPane.topAnchor="180" AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50" AnchorPane.bottomAnchor="50"
+              style="-fx-background-color: white; -fx-background-radius: 12;">
+            <children>
+                <!-- Flecha atrás -->
+                <ImageView fitHeight="40" fitWidth="40" layoutX="25" layoutY="25" onMouseClicked="#volver" style="-fx-cursor: hand;">
+                    <image><Image url="@../imagenes/izquierda.png"/></image>
+                </ImageView>
+
+                <!-- Título -->
+                <Text layoutX="780" layoutY="80" text="FORMATO A">
+                    <font><Font size="36"/></font>
+                </Text>
+
+                <!-- Separador vertical -->
+                <Separator layoutX="930" layoutY="145" orientation="VERTICAL" prefHeight="520"/>
+
+                <!-- Columna izquierda -->
+                <VBox spacing="10" layoutX="90" layoutY="140">
+                    <children>
+                        <Label text="Titulo de proyecto de grado*"/>
+                        <TextField fx:id="txtTitulo" editable="false" prefWidth="750"/>
+
+                        <Label text="Director del proyecto*"/>
+                        <TextField fx:id="txtDirector" editable="false" prefWidth="750"/>
+
+                        <Label text="Codirector del proyecto"/>
+                        <TextField fx:id="txtCodirector" editable="false" prefWidth="750"/>
+
+                        <Label text="Objetivo general"/>
+                        <TextField fx:id="txtObjetivo" editable="false" prefWidth="750"/>
+
+                        <Label text="Objetivo específico"/>
+                        <TextArea fx:id="txtObjetivoEspecifico" editable="false" prefWidth="750" prefHeight="160"/>
+                    </children>
+                </VBox>
+
+                <!-- Columna derecha -->
+                <VBox spacing="14" layoutX="980" layoutY="140">
+                    <children>
+                        <Label text="Estudiante*"/>
+                        <TextArea fx:id="txtEstudiantes" editable="false" prefWidth="600" prefHeight="60"/>
+
+                        <Label text="Fecha actual"/>
+                        <TextField fx:id="txtFecha" editable="false" prefWidth="600"/>
+
+                        <Label text="Modalidad*"/>
+                        <TextField fx:id="txtModalidad" editable="false" prefWidth="600"/>
+
+                        <!-- PDF card -->
+                        <Pane prefWidth="600" prefHeight="260" style="-fx-border-color: #b5b5b5; -fx-border-radius: 12;">
+                            <children>
+                                <ImageView fitHeight="200" fitWidth="200" layoutX="200" layoutY="15" preserveRatio="true">
+                                    <image><Image url="@../imagenes/expediente.png"/></image>
+                                </ImageView>
+                                <HBox spacing="8" layoutX="160" layoutY="220">
+                                    <children>
+                                        <TextField fx:id="txtArchivo" editable="false" prefWidth="300"/>
+                                        <Button text="Ver documento" onAction="#abrirPDF"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </Pane>
+                    </children>
+                </VBox>
+
+                <!-- Botones aceptar / rechazar -->
+                <HBox spacing="20" layoutX="1220" layoutY="700">
+                    <children>
+                        <Button text="Rechazar" onAction="#rechazar" style="-fx-background-color:#e74c3c; -fx-text-fill:white;"/>
+                        <Button text="Aceptar"  onAction="#aprobar"  style="-fx-background-color:#2ecc71; -fx-text-fill:white;"/>
+                    </children>
+                </HBox>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

@@ -5,6 +5,7 @@ package co.edu.unicauca.Services;
  * @author J. Fernando
  */
 
+import co.edu.unicauca.DTO.FormatoADetalle;
 import co.edu.unicauca.DTO.ProyectoListadoCoord;
 
 import java.sql.*;
@@ -70,4 +71,45 @@ public class CoordinadorProyectoService {
             ps.executeUpdate();
         }
     }
+    
+    public FormatoADetalle obtenerDetalle(int idProyecto) throws Exception {
+        String sql = """
+            SELECT p.idProyecto, p.titulo, p.objetivo, p.objetivoEspecifico,
+                   p.estado, p.tipo, p.fechaDeSubida, p.archivoAdjunto,
+                   (SELECT nombre || ' ' || apellido FROM Persona WHERE idPersona = pp.idDirector)   AS director,
+                   (SELECT nombre || ' ' || apellido FROM Persona WHERE idPersona = pp.idCodirector) AS codirector,
+                   COALESCE(GROUP_CONCAT(per.nombre || ' ' || per.apellido, ' - '), '') AS estudiantes
+            FROM Proyecto p
+            LEFT JOIN ProyectosProfesor pp    ON pp.idProyecto = p.idProyecto
+            LEFT JOIN ProyectosEstudiante pe  ON pe.idProyecto = p.idProyecto
+            LEFT JOIN Persona per             ON per.idPersona = pe.idEstudiante
+            WHERE p.idProyecto = ?
+            GROUP BY p.idProyecto, p.titulo, p.objetivo, p.objetivoEspecifico, p.estado, p.tipo, p.fechaDeSubida, p.archivoAdjunto, director, codirector
+        """;
+
+        try (java.sql.Connection c = java.sql.DriverManager.getConnection("jdbc:sqlite:mi_base.db");
+             java.sql.PreparedStatement ps = c.prepareStatement(sql)) {
+            ps.setInt(1, idProyecto);
+            try (java.sql.ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return new FormatoADetalle(
+                        rs.getInt("idProyecto"),
+                        rs.getString("titulo"),
+                        rs.getString("objetivo"),
+                        rs.getString("objetivoEspecifico"),
+                        rs.getString("estado"),
+                        rs.getString("tipo"),
+                        rs.getString("fechaDeSubida"),
+                        rs.getString("archivoAdjunto"),
+                        rs.getString("director"),
+                        rs.getString("codirector"),
+                        rs.getString("estudiantes")
+                    );
+                }
+            }
+        }
+        return null;
+    }
+
+    
 }

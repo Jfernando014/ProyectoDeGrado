@@ -10,6 +10,10 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;   // ← usamos Text
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.Button;
 
 import java.awt.Desktop;
 import java.io.File;
@@ -36,46 +40,44 @@ public class CoordinadorListadoController {
         colEstudiante.setCellValueFactory(new PropertyValueFactory<>("estudiantes"));
         colTitulo.setCellValueFactory(new PropertyValueFactory<>("titulo"));
         tabla.setPlaceholder(new Label("Sin proyectos " + filtroEstado.toLowerCase()));
+        // La celda recibe el objeto completo de la fila
+        colDetalles.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
 
+        
         colDetalles.setCellFactory(col -> new TableCell<>() {
-            private final Button btnInfo = new Button("🔍");
-            private final Button btnPdf  = new Button("📄");
-            private final Button btnOk   = new Button("✅");
-            private final Button btnNo   = new Button("❌");
-            private final HBox boxPend   = new HBox(8, btnInfo, btnPdf, btnOk, btnNo);
-            private final HBox boxOtros  = new HBox(8, btnInfo, btnPdf);
 
-            {
-                btnInfo.setOnAction(e -> {
-                    ProyectoListadoCoord p = getTableView().getItems().get(getIndex());
-                    mostrarDetalle(p);
-                });
-                btnPdf.setOnAction(e -> {
-                    ProyectoListadoCoord p = getTableView().getItems().get(getIndex());
-                    abrirPDF(p);
-                });
-                btnOk.setOnAction(e -> cambiarEstado("Aprobado"));
-                btnNo.setOnAction(e -> cambiarEstado("Rechazado"));
-            }
+        private final Button btnVer = new Button("🔍 Ver");
 
-            private void cambiarEstado(String nuevo) {
+        {
+            btnVer.setOnAction(e -> {
                 ProyectoListadoCoord p = getTableView().getItems().get(getIndex());
                 try {
-                    service.actualizarEstado(p.getIdProyecto(), nuevo);
-                    cargar(filtroEstado);
+                    javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(
+                        getClass().getResource("/fxml/FormatosCoordinadorDetalle.fxml") // ← la vista tipo Figma
+                    );
+                    javafx.scene.Parent root = loader.load();
+                    CoordinadorFormatoAController ctrl = loader.getController();
+                    ctrl.init(p.getIdProyecto(), filtroEstado); // vuelve a la misma lista después
+                    ((javafx.stage.Stage) getTableView().getScene().getWindow())
+                            .setScene(new javafx.scene.Scene(root));
                 } catch (Exception ex) {
-                    new Alert(Alert.AlertType.ERROR, "No se pudo actualizar el estado: " + ex.getMessage()).showAndWait();
+                    new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.ERROR,
+                            "No se pudo abrir el detalle: " + ex.getMessage()).showAndWait();
                 }
-            }
+            });
 
-            @Override
-            protected void updateItem(ProyectoListadoCoord p, boolean empty) {
-                super.updateItem(p, empty);
-                setGraphic(empty || p == null
-                        ? null
-                        : (filtroEstado.equalsIgnoreCase("PENDIENTE") ? boxPend : boxOtros));
-            }
-        });
+            // (opcional) estilo de link
+            // btnVer.setStyle("-fx-background-color: transparent; -fx-text-fill: -fx-accent;");
+            setText(null); // nunca texto, solo el botón
+        }
+
+        @Override
+        protected void updateItem(ProyectoListadoCoord p, boolean empty) {
+            super.updateItem(p, empty);
+            setGraphic(empty || p == null ? null : btnVer);
+        }
+    });
+
 
         tabla.setItems(items);
     }
