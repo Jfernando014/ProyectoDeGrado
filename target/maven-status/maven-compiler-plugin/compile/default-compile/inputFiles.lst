@@ -22,6 +22,7 @@ C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauc
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Models\Programa.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Util\Encriptador.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Vista\UserLoginController.java
+C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\DTO\ProyectoListadoCoord.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Repository\ProgramaRepository.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Models\FormatoA.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Util\Cargo.java
@@ -37,5 +38,8 @@ C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauc
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Repository\Repository.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Repository\DepartamentoRepository.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Util\Validador.java
+C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Vista\CoordinadorListadoController.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Observer\Subject.java
+C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Services\CoordinadorProyectoService.java
+C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Vista\CoordinadorMenuController.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Repository\Implementation\DepartamentoRepositorySQLite.java

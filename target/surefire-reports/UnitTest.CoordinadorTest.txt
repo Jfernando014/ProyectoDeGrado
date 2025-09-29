@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: UnitTest.CoordinadorTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.854 s <<< FAILURE! -- in UnitTest.CoordinadorTest
+Tests run: 6, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.883 s <<< FAILURE! -- in UnitTest.CoordinadorTest
 UnitTest.CoordinadorTest.testValidacionTituloInvalido -- Time elapsed: 0.004 s <<< ERROR!
 java.lang.IllegalArgumentException: El título debe tener entre 5 y 200 caracteres
 	at co.edu.unicauca.Models.FormatoA.setTitulo(FormatoA.java:76)

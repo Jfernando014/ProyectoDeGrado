@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.unicauca.Vista.CoordinadorListadoController"
+            prefWidth="1280" prefHeight="720"
+            style="-fx-background-color: radial-gradient(center 50% 50%, radius 200%, #001282, black);">
+
+    <children>
+        <!-- Header -->
+        <Pane AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0"
+              prefHeight="90" style="-fx-background-color: white;">
+            <children>
+                <ImageView fitHeight="70" fitWidth="160" layoutX="16" layoutY="10">
+                    <image><Image url="@../imagenes/logoUnicaucaHorizontal.png"/></image>
+                </ImageView>
+                <Text fx:id="txtTitulo" layoutX="470" layoutY="58" text="Proyectos de grado" >
+                    <font><Font size="28"/></font>
+                </Text>
+            </children>
+        </Pane>
+
+        <!-- Card -->
+        <VBox spacing="12" AnchorPane.leftAnchor="40" AnchorPane.rightAnchor="40"
+              AnchorPane.topAnchor="110" AnchorPane.bottomAnchor="40"
+              style="-fx-background-color: white; -fx-padding: 28; -fx-background-radius: 16;">
+            <children>
+                <Text fx:id="txtSeccion" text="Pendientes" style="-fx-text-alignment: center;">
+                    <font><Font size="22"/></font>
+                </Text>
+                <Separator/>
+                <TableView fx:id="tabla" prefHeight="520">
+                    <columns>
+                        <TableColumn fx:id="colEstudiante" text="Estudiante" prefWidth="420"/>
+                        <TableColumn fx:id="colTitulo"     text="Nombre proyecto" prefWidth="600"/>
+                        <TableColumn fx:id="colDetalles"   text="Detalles" prefWidth="180"/>
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

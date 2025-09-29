@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: UnitTest.ProyectoServiceTest
 -------------------------------------------------------------------------------
-Tests run: 12, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.041 s <<< FAILURE! -- in UnitTest.ProyectoServiceTest
-UnitTest.ProyectoServiceTest.testSubirFormatoSinEstudiantes -- Time elapsed: 0.002 s <<< ERROR!
+Tests run: 12, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.029 s <<< FAILURE! -- in UnitTest.ProyectoServiceTest
+UnitTest.ProyectoServiceTest.testSubirFormatoSinEstudiantes -- Time elapsed: 0.001 s <<< ERROR!
 java.lang.IllegalArgumentException: El proyecto debe tener al menos un estudiante
 	at co.edu.unicauca.Models.FormatoA.setEstudiantes(FormatoA.java:196)
 	at UnitTest.ProyectoServiceTest.testSubirFormatoSinEstudiantes(ProyectoServiceTest.java:109)
@@ -72,7 +72,7 @@ java.lang.IllegalArgumentException: El proyecto debe tener al menos un estudiant
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 
-UnitTest.ProyectoServiceTest.testSubirFormatoArchivoNoPDF -- Time elapsed: 0.003 s <<< ERROR!
+UnitTest.ProyectoServiceTest.testSubirFormatoArchivoNoPDF -- Time elapsed: 0.001 s <<< ERROR!
 java.lang.IllegalArgumentException: El archivo adjunto debe ser un PDF
 	at co.edu.unicauca.Models.FormatoA.setArchivoAdjunto(FormatoA.java:184)
 	at UnitTest.ProyectoServiceTest.testSubirFormatoArchivoNoPDF(ProyectoServiceTest.java:119)
@@ -142,7 +142,7 @@ java.lang.IllegalArgumentException: El archivo adjunto debe ser un PDF
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 
-UnitTest.ProyectoServiceTest.testSubirFormatoTituloInvalido -- Time elapsed: 0.001 s <<< ERROR!
+UnitTest.ProyectoServiceTest.testSubirFormatoTituloInvalido -- Time elapsed: 0.002 s <<< ERROR!
 java.lang.IllegalArgumentException: El título debe tener entre 5 y 200 caracteres
 	at co.edu.unicauca.Models.FormatoA.setTitulo(FormatoA.java:76)
 	at UnitTest.ProyectoServiceTest.testSubirFormatoTituloInvalido(ProyectoServiceTest.java:99)

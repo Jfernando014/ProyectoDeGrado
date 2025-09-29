@@ -1,5 +1,6 @@
 co\edu\unicauca\Vista\ProfesorSubirFormatoA.class
 co\edu\unicauca\Repository\Implementation\ProyectoSaver.class
+co\edu\unicauca\Vista\CoordinadorMenuController.class
 co\edu\unicauca\Services\ConsultaProyectoService.class
 co\edu\unicauca\Repository\Implementation\ProyectoRepositorySQLite.class
 co\edu\unicauca\Vista\EstudianteMisProyectos$1.class
@@ -22,11 +23,14 @@ co\edu\unicauca\Repository\ProyectoRepository.class
 co\edu\unicauca\Models\Facultad.class
 co\edu\unicauca\Repository\PersonaRepository.class
 co\edu\unicauca\Util\ConstantesValidacion.class
+co\edu\unicauca\Services\CoordinadorProyectoService.class
 co\edu\unicauca\Models\Estudiante.class
 co\edu\unicauca\Vista\UserRegisterController$2.class
+co\edu\unicauca\DTO\ProyectoListadoCoord.class
 co\edu\unicauca\DTO\ProyectoResumen.class
 co\edu\unicauca\Factorys\RepositoryFactory.class
 co\edu\unicauca\Models\Programa.class
+co\edu\unicauca\Vista\CoordinadorListadoController$1.class
 co\edu\unicauca\Repository\Implementation\DepartamentoRepositorySQLite.class
 co\edu\unicauca\Util\Cargo.class
 co\edu\unicauca\Services\ProyectoService.class
@@ -41,6 +45,7 @@ co\edu\unicauca\Vista\UserRegisterController.class
 co\edu\unicauca\Vista\UserRegisterController$4.class
 co\edu\unicauca\Models\Departamento.class
 co\edu\unicauca\database\InitDB.class
+co\edu\unicauca\Vista\CoordinadorListadoController.class
 co\edu\unicauca\Repository\ProgramaRepository.class
 co\edu\unicauca\Models\Profesor.class
 co\edu\unicauca\Util\Validador.class
