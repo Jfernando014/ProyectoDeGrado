@@ -107,7 +107,10 @@
                </font>
             </Text>
             <TextArea fx:id="textAreaObjetivosEspecificos" layoutX="104.0" layoutY="586.0" prefHeight="170.0" prefWidth="400.0" style="-fx-border-color: gray; -fx-alignment: center;" />
-            <TextField fx:id="textFieldCoodirector1" layoutX="104.0" layoutY="290.0" prefHeight="40.0" prefWidth="400.0" promptText="DIRECTOR DE PROYECTO" style="-fx-border-color: gray; -fx-alignment: center;" />
+            <TextField fx:id="textFieldDirector" layoutX="104.0" layoutY="290.0"
+           prefHeight="40.0" prefWidth="400.0"
+           promptText="DIRECTOR DE PROYECTO"
+           style="-fx-border-color: gray; -fx-alignment: center;" />
             <Line endX="-100.0" endY="610.0" layoutX="683.0" layoutY="191.0" startX="-100.0" startY="-45.0" />
             <Text layoutX="745.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: CENTER;" text="FORMATO A">
                <font>

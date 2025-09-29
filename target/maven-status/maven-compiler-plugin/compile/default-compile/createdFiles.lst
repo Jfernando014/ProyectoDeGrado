@@ -1,4 +1,5 @@
 co\edu\unicauca\Vista\ProfesorSubirFormatoA.class
+co\edu\unicauca\Repository\Implementation\ProyectoSaver.class
 co\edu\unicauca\Repository\Implementation\ProyectoRepositorySQLite.class
 co\edu\unicauca\Services\DepartamentoService.class
 co\edu\unicauca\Models\Coordinador.class
@@ -6,6 +7,7 @@ co\edu\unicauca\Observer\Subject.class
 co\edu\unicauca\Services\ProgramaService.class
 co\edu\unicauca\database\ConexionSQLite.class
 co\edu\unicauca\Models\Persona.class
+co\edu\unicauca\Repository\Implementation\ProyectoSaver$FKTarget.class
 co\edu\unicauca\Services\PersonaService.class
 co\edu\unicauca\main\Main.class
 co\edu\unicauca\Vista\EstudianteController.class
