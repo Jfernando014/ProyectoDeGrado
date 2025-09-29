@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.unicauca.Vista.EstudianteMisProyectos"
+            prefWidth="1280" prefHeight="720"
+            style="-fx-background-color: radial-gradient(center 50% 50%, radius 200%, #001282, black);">
+
+    <children>
+        <!-- Header -->
+        <Pane AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0"
+              prefHeight="90" style="-fx-background-color: white;">
+            <children>
+                <ImageView fitHeight="70" fitWidth="160" layoutX="16" layoutY="10">
+                    <image><Image url="@../imagenes/logoUnicaucaHorizontal.png"/></image>
+                </ImageView>
+                <Text layoutX="520" layoutY="58" text="Portal Estudiante">
+                    <font><Font size="28"/></font>
+                </Text>
+                <Label fx:id="lblUsuario" layoutX="1100" layoutY="35" textFill="#333"/>
+            </children>
+        </Pane>
+
+        <!-- Card -->
+        <VBox spacing="12" AnchorPane.leftAnchor="60" AnchorPane.rightAnchor="60"
+              AnchorPane.topAnchor="120" AnchorPane.bottomAnchor="60"
+              style="-fx-background-color: white; -fx-padding: 28; -fx-background-radius: 16;">
+            <children>
+                <Text text="Mis proyectos" style="-fx-text-alignment: center;" strokeWidth="0">
+                    <font><Font size="24"/></font>
+                </Text>
+                <Separator/>
+                <TableView fx:id="tabla" prefHeight="520">
+                    <columns>
+                        <TableColumn fx:id="colTitulo" text="Nombre proyecto" prefWidth="640"/>
+                        <TableColumn fx:id="colEstado" text="Estado" prefWidth="280"/>
+                        <TableColumn fx:id="colDetalles" text="Detalles" prefWidth="220"/>
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

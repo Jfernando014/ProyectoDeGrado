@@ -117,8 +117,16 @@ public class UserLoginController {
                     System.out.println("🔵 Navegando a vista Coordinador...");
                     Main.setRoot("FormatosCoordinador");
                 } else if (persona instanceof Estudiante) {
-                    System.out.println("🔵 Navegando a vista Estudiante...");
-                    Main.setRoot("UserStudent");
+                    System.out.println("🔵 Navegando a Mis Proyectos (Estudiante)...");
+                    javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(
+                        co.edu.unicauca.main.Main.class.getResource("/fxml/EstudianteMisProyectos.fxml")
+                    );
+                    javafx.scene.Parent root = loader.load();
+
+                    co.edu.unicauca.Vista.EstudianteMisProyectos ctrl = loader.getController();
+                    ctrl.setEstudiante((co.edu.unicauca.Models.Estudiante) persona);
+
+                    co.edu.unicauca.main.Main.setRoot(root);
                 } else {
                     System.out.println("⚠️ Tipo de usuario no manejado: " + persona.getClass().getSimpleName());
                     textCorreoOContraseniaIncorrecto.setText("Tipo de usuario no soportado");

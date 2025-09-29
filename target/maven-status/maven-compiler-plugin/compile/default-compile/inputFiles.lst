@@ -1,4 +1,5 @@
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Models\Persona.java
+C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Vista\EstudianteMisProyectos.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Vista\EstudianteController.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Repository\ProyectoRepository.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Models\Departamento.java
@@ -10,6 +11,7 @@ C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauc
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\database\InitDB.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Repository\Implementation\PersonaRepositorySQLite.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Models\Facultad.java
+C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\DTO\ProyectoResumen.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Services\PersonaService.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Repository\Implementation\ProyectoSaver.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Factorys\RepositoryFactory.java
@@ -26,6 +28,7 @@ C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauc
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\database\ConexionSQLite.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Models\Estudiante.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Vista\ProfesorMenuController.java
+C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Services\ConsultaProyectoService.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Services\ProgramaService.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Util\ConstantesValidacion.java
 C:\Users\JFernando\Documents\GitHub\ProyectoDeGrado\src\main\java\co\edu\unicauca\Vista\UserRegisterController.java
